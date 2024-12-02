@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "bokk app",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "live-server",
-    "build": "rollup"
+    "build": "rollup -c --watch"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,11 @@
   "homepage": "https://github.com/soloway73/js-advanced#readme",
   "devDependencies": {
     "@eslint/js": "^9.16.0",
+    "@rollup/plugin-node-resolve": "^15.3.0",
     "eslint": "^9.16.0",
     "globals": "^15.13.0",
-    "rollup": "^4.28.0"
+    "live-server": "^1.2.2",
+    "rollup": "^4.28.0",
+    "rollup-plugin-import-css": "^3.5.7"
   }
 }
