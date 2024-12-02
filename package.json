@@ -1,0 +1,31 @@
+{
+  "name": "book-not-app",
+  "version": "1.0.0",
+  "description": "not application",
+  "main": "app.js",
+  "scripts": {
+    "start": "live-server",
+    "build": "rollup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soloway73/js-advanced.git"
+  },
+  "keywords": [
+    "books"
+  ],
+  "author": "Ilyas Khisyametdinov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soloway73/js-advanced/issues"
+  },
+  "homepage": "https://github.com/soloway73/js-advanced#readme",
+  "dependencies": {
+    "rollup": "^4.28.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0"
+  }
+}
