@@ -2,6 +2,7 @@ import onChange from "on-change";
 import { AbstractView } from "../../common/view";
 import { Header } from "../../components/header/header";
 import { Search } from "../../components/search/search";
+import { CardList } from "../../components/content/card-list";
 
 export class MainView extends AbstractView {
   state = {
@@ -26,7 +27,7 @@ export class MainView extends AbstractView {
 
   async loadList(q, offset) {
     const res = await fetch(
-      `https://openlibary.org/search.json?q=${q}&offset=${offset}`
+      `https://openlibrary.org/search.json?q=${q}&offset=${offset}`
     );
     return res.json();
   }
@@ -39,18 +40,21 @@ export class MainView extends AbstractView {
         this.state.offset
       );
       this.state.loading = false;
-      console.log(data);
-      //this.state.list = data;
+      this.state.list = data.docs;
+      console.log(this.state.list);
+    }
+    if (path === "list" || path === "loading") {
+      this.render();
     }
   }
 
   render() {
     const main = document.createElement("div");
     main.append(new Search(this.state).render());
+    main.append(new CardList(this.appState, this.state).render());
     this.app.innerHTML = "";
     this.app.append(main);
     this.renderHeader();
-    this.appState.favorites.push("s");
   }
   renderHeader() {
     const header = new Header(this.appState).render();

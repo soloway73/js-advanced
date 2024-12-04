@@ -8,6 +8,7 @@ export class Search extends DivComponent {
   }
 
   search() {
+    console.log("Поиск...");
     const value = this.el.querySelector("input").value;
     this.state.searchQuery = value;
   }
